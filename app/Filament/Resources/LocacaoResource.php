@@ -516,25 +516,35 @@ class LocacaoResource extends Resource
                                     ])
 
                             ]),
-                    
-                                Forms\Components\Tabs\Tab::make('Assinaturas')
+
+                        Forms\Components\Tabs\Tab::make('Assinaturas')
+                            ->schema([
+                                Fieldset::make('Assinaturas do Contrato')
                                     ->schema([
-                                        Fieldset::make('Assinaturas do Contrato')
-                                            ->schema([
-                                                Forms\Components\TextInput::make('testemunha_1')
-                                                    ->label('Testemunha 1')
-                                                    ->required(false),
-                                                Forms\Components\TextInput::make('testemunha_1_rg')
-                                                    ->label('RG'),
-                                                Forms\Components\TextInput::make('testemunha_2')
-                                                    ->label('Testemunha 2')
-                                                    ->required(false),                                                
-                                                Forms\Components\TextInput::make('testemunha_2_rg')
-                                                    ->label('RG'),
-                                            ]),
+                                        Forms\Components\TextInput::make('testemunha_1')
+                                            ->label('Testemunha 1')
+                                            ->required(false),
+                                        Forms\Components\TextInput::make('testemunha_1_rg')
+                                            ->label('RG'),
+                                        Forms\Components\TextInput::make('testemunha_2')
+                                            ->label('Testemunha 2')
+                                            ->required(false),
+                                        Forms\Components\TextInput::make('testemunha_2_rg')
+                                            ->label('RG'),
                                     ]),
-                                
-                            
+
+                                Fieldset::make('Dados Completo do Fiador')
+                                    ->schema([
+                                        Forms\Components\Textarea::make('fiador')
+                                            ->label('Fiador')
+                                            ->autosize()
+                                            ->columnSpanFull(),
+
+
+                                    ]),
+                            ]),
+
+
 
                         Forms\Components\Tabs\Tab::make('Ocorrências')
                             ->schema([
@@ -573,9 +583,8 @@ class LocacaoResource extends Resource
                                             ->addActionLabel('Novo')
                                     ]),
                             ]),
-                        ])
-                        ]); 
-            
+                    ])
+            ]);
     }
 
     public static function table(Table $table): Table

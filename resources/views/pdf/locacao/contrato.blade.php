@@ -28,7 +28,7 @@
 
     #ficha td {
     border: 1px solid rgb(160 160 160);
-    padding: 0px 2px;
+    padding: 8px 10px;
     }
 
 
@@ -56,16 +56,13 @@
 <table style="width: 100%">
   <tr>
     <td><img src="{{ asset('img/logo.png') }}" alt="Image" height="60" width="180"></td>
-    <td> <p style="width: 100%; font-size:28px; font-weight: bold;" align="center">KLVIDAL LOCAÇÃO DE VEÍCULOS</p>
-         <p style="font-size:16px;" align="center">Avenida Presidente Costa e Silva, 1460 - Helena Maria<br>
-                                                            Osasco - SP - CEP: 06253-000 - Contato: (11) 97049-3745<br>
-                                                            Email: klvidalocacaodeveiculos@gmail.com<br>
-                                                            CNPJ: 41.110.090/0001-50
-                                                           </p>
+    <td> <p style="width: 100%; font-size:28px; font-weight: bold;" align="center">Locadora Guaratiba</p>
+         <p style="font-size:16px;" align="center">Estrada da Matriz, nº 480 Guaratiba - Rio de Janeiro - RJ.<br>
+                                                  Contato: (21)99549-3528<br>
+                                                  Email:  shineray2guaratiba@gmail.com - CNPJ: 54.969.765/0001-63</p>
     </td>
-  
 </tr>
-</table>
+
 </table>
 <div class="retangulo">
     <span class="texto">FICHA DE LOCAÇÃO</span>
@@ -202,26 +199,6 @@
 </tr>
 </table>
 
-
-</div>
-<div style="width: 100%; text-align: center; margin-top: 30px;">
-    <p style="text-align: center;">Osasco - SP, {{ $dataAtual->isoFormat('DD MMMM YYYY') }}</p>
-    <br>
-    <div style="display: inline-block; text-align: center;">
-        <div>
-            _________________________________________<br>
-            LOCADOR: KLVIDAL LOCAÇÃO DE VEÍCULOS.<br>
-            <span style="font-size:10px;">Proprietário ou representante legal da Empresa</span>
-        </div>
-        <br><br>
-        <div>
-            _________________________________________<br>
-            LOCATÁRIO: {{$locacao->Cliente->nome}}
-        </div>
-    </div>
-</div>
-
-
 <!-- PÁGINA 2 -->
 
 <style>
@@ -239,7 +216,7 @@
 <table style="width: 100%">
     <tr>
         <td><img src="{{ asset('img/logo.png') }}" alt="Image" height="60" width="180"></td>
-      <td> <p style="width: 100%; font-size:20px; font-weight: bold" align="center">Contrato de Locação de Veículo</p>
+      <td> <p style="width: 100%; font-size:20px; font-weight: bold" align="center">Contrato de Locação de Veículos</p>
 
       </td>
   </tr>
@@ -247,308 +224,117 @@
 </div>
 <div>
     <p class="parag">
-        Registro: <b>{{$locacao->id}}</b> 
+        Registro: <b>{{$locacao->id}}</b><br><br>
+        Parte, locadora. Guaratiba Ltda CNPJ 54.969.765/0001-63 Endereço: Estrada da Matriz 480 denominado LOCADOR.<br><br>
+
+        <b>CLÁUSULA 1 – DO OBJETO DO CONTRATO:</b><br>
+        <b>1.1</b> Por meio deste contrato regula-se a locação da motocicleta da marca: <b>{{$locacao->Veiculo->modelo}} - {{$locacao->Veiculo->cor}} - {{$locacao->Veiculo->ano}}.</b>.<br>
+        <b>1.2</b> O veículo descrito acima, será utilizado exclusivamente pelo LOCATÁRIO, não sendo permitido sub-rogar para terceiros os direitos por ele obtidos no presente contrato, nem permitir que outra pessoa conduza o referido veículo sem a inequívoca e expressa autorização do LOCADOR, sob pena de rescisão contratual, multa de R$ 600,00 (seiscentos reais), bem como, a responsabilização total por qualquer ato ou danos em relação ao veículo, inclusive os provenientes de caso fortuito ou força maior.<br>
+        <br>
+
+        <b>CLÁUSULA 2 – DO HORÁRIO DO ALUGUEL E LOCAL DE COLETA E DEVOLUÇÃO DO VEÍCULO:</b><br>
+        <b>2.1</b> O veículo em questão permanecerá na posse do LOCATÁRIO por período integral, de segunda a domingo.<br>
+        <b>2.2</b> O LOCATÁRIO deverá apresentar o veículo ao LOCADOR 01 (uma) vez por mês para a realização de vistoria, em data e endereço por este designado.<br>
+        <b>2.3</b> A não apresentação do veículo, no prazo e nos supracitados locais, será cobrada ao LOCATÁRIO multa de R$ 150,00 (cento e cinquenta reais) mais R$ 50,00 (cinquenta reais) por dia de atraso, além da possível rescisão contratual.<br>
+        <br>
+
+        <b>CLÁUSULA 3 – DAS OBRIGAÇÕES DO LOCADOR:</b><br>
+        <b>3.1</b> O veículo objeto do presente contrato será submetido à manutenção preventiva periódica, ou em decorrência de problemas mecânicos e/ou elétricos, aos quais o LOCATÁRIO não deu causa, em oficina mecânica designada pelo LOCADOR, nos termos a seguir:<br>
+        <b>3.1.1</b> Troca do Kit de Tração: Sempre que houver barulho anormal e/ou apresentar desgaste excessivo;<br>
+        <b>3.1.2</b> Troca de Pneus: Quando estiverem no nível do Tread Wear Indicator (TWI);<br>
+        <b>3.1.3</b> Se o LOCATÁRIO não fizer a devolução da moto ao término do contrato, na data e horário estipulados, o LOCADOR fica no direito de renovar automaticamente o contrato pelo mesmo tempo da locação anterior.<br>
+        <b>3.2</b> Caso, em alguma das manutenções supracitadas, seja necessária antes ou durante o período estipulado, deverá ser arcada integralmente pelo LOCADOR, salvo nos casos em que o LOCATÁRIO tenha dado causa ao evento, por mau uso.<br>
+        <b>3.3</b> Os gastos decorrentes da manutenção preventiva periódica supracitada, bem como o valor pago pela mão de obra do profissional que realizará o serviço, serão suportados pelo LOCADOR.<br>
+        <b>3.4</b> As manutenções que não foram citadas na cláusula <b>3.1</b> também serão arcadas pelo LOCADOR, quando forem necessárias e atestadas pelo mecânico do mesmo.<br>
+        <b>3.5</b> No caso de problemas mecânicos e/ou elétricos (quebra, defeito e/ou desgaste) percebidos em ocasião diversa da manutenção preventiva periódica, o LOCATÁRIO deverá informar imediatamente ao LOCADOR, bem como apresentar o veículo a este, no prazo de 24 horas, para reparo a ser realizado em oficina mecânica designada pelo LOCADOR.<br>
+        <b>3.6</b> O LOCADOR manterá proteção veicular no veículo, caso o LOCATÁRIO contrate os planos de seguro descrito no início deste contrato, caso não haja interesse de adquirir proteção veicular por parte do LOCATÁRIO, o veículo seguirá por total responsabilidade civil e criminal do LOCATÁRIO, ficando responsável por quaisquer danos causados ao veículo alugado ou a terceiros.<br>
+        <b>3.6.1</b> Caso o LOCATÁRIO opte por contratar alguma proteção veicular (seguro para pane, seguro para terceiros, seguro para o veículo alugado e seguro com moto reserva), fica a observação em que o seguro veicular só será válido dentro do perímetro de até 230 km (duzentos e trinta quilômetros) de distância da base da locadora, sendo que, a proteção veicular para terceiros fixada no valor máximo a ser coberto em até R$ 10.000,00 (dez mil reais), caso os danos a terceiros ultrapassem dez mil reais, o valor excedente deve ser cobrado do LOCATÁRIO.<br>
+        <b>3.7</b> O LOCADOR não é obrigado a disponibilizar veículo reserva (caso o mesmo não seja contratado previamente) e não se responsabiliza caso o LOCATÁRIO não possa dirigir devido à indisponibilidade do veículo.<br>
+        <br>
+
+        <b>CLÁUSULA 4 – DAS OBRIGAÇÕES DO LOCATÁRIO:</b><br>
+        <b>4.1</b> É de responsabilidade do LOCATÁRIO, a observância básica dos itens do veículo, como calibragem dos pneus, nível de óleo do motor, nível de fluido de freio, observância da marcação, sistema de iluminação e sinalização, entre outros.<br>
+        <b>4.1.1</b> Quaisquer danos/avarias ao veículo serão apurados no final do contrato e os custos de reparação serão arcados pelo LOCATÁRIO.<br>
+        <b>4.1.2</b> Os custos de revisões reparatórias causadas pelo mau uso dos veículos correrão por conta do LOCATÁRIO. Caso a bomba de combustível queime ou danifique por falta de combustível ou negligência, quando o veículo estiver em posse do LOCATÁRIO, este deverá arcar com o valor integral da peça, mão de obra, reboque do veículo e demais valores inerentes ao reparo.<br>
+        <b>4.2</b> É de responsabilidade do LOCATÁRIO o pagamento de quaisquer multas relativas às infrações de trânsito inerentes à utilização do veículo cometidas na vigência deste contrato.<br>
+        <b>4.2.1</b> O pagamento das multas pelo LOCATÁRIO deverá ser realizado imediatamente após a constatação no sistema do DETRAN, independentemente de qualquer procedimento, seja transferência de pontos ou recurso.<br>
+        <b>4.2.2</b> O LOCATÁRIO concorda que o LOCADOR irá indicá-lo como condutor/infrator responsável pelas infrações de trânsito apuradas durante a locação, nos termos do artigo 257, parágrafos 1º, 3º, 7º e 8º do Código de Trânsito. A partir da indicação, o LOCATÁRIO terá legitimidade para se defender perante o órgão atuador.<br>
+        <b>4.2.3</b> Qualquer questionamento sobre eventual improcedência de infração de trânsito deverá ser feito exclusivamente pelo LOCATÁRIO perante o órgão autuador.<br>
+        <b>4.3</b> Ao ocorrer as multas acima mencionadas, quando a autuação da infração chegar ao LOCADOR, deverá o LOCATÁRIO comparecer em local e data estipulados pelo LOCADOR, para a assinatura do auto de infração, com o intuito de transferência dos pontos para a sua CNH, sob pena de pagamento ao LOCADOR na quantia de R$ 200,00 (duzentos reais), em caso de perda do prazo para a transferência dos pontos.<br>
+        <b>4.4</b> Caso o veículo seja rebocado por estacionamento irregular, ou outra hipótese a qual tenha dado causa, o LOCATÁRIO deverá arcar com todos os custos necessários para a recuperação do veículo junto ao respectivo depósito público. O LOCATÁRIO deverá arcar também com multa contratual de R$ 30,00 (trinta reais) por dia pelo período em que a moto estiver no depósito, a título de lucro cessante.<br>
+        <b>4.5</b> É proibido o LOCATÁRIO acionar o serviço de proteção veicular do veículo, objeto deste contrato, sem a expressa permissão do LOCADOR, sob pena de multa de R$ 200,00 (duzentos reais), além da obrigação de arcar com eventuais custos de reboques e/ou transportes necessários, caso o serviço de proteção veicular não os disponibilize mais, devido ao limite de utilizações mensais deste serviço.<br>
+        <b>4.6</b> O LOCATÁRIO se responsabiliza por quaisquer acessórios do veículo que estiverem em sua posse, como por exemplo chave de ignição, documento do veículo, entre outros. Caso algum acessório do veículo seja perdido ou danificado, o LOCATÁRIO deverá arcar com todos os custos necessários à reposição.<br>
+        <b>4.7</b> É proibido o LOCATÁRIO sair do perímetro urbano da cidade onde a moto foi alugada, com o veículo objeto deste contrato, sem a autorização expressa e por escrito do LOCADOR, sob pena de multa de R$ 150,00 (cento e cinquenta reais), exceto se o LOCATÁRIO adquiriu o plano saída da cidade, além do pagamento dos custos para o retorno do veículo para base da locadora, bem como o pagamento de eventuais danos ocorridos com o veículo, inclusive caso furto e força maior.<br>
+        <b>4.8</b> O LOCATÁRIO se compromete a comparecer à sede da empresa de proteção veicular, ou outro local especificado por ela, a fim de cumprir com procedimento de indenização do veículo.<br>
+        <b>4.9</b> Caso o LOCATÁRIO se envolva em sinistro, estando sob efeito de álcool/entorpecentes, ou se não fizer o teste de embriaguez requerido pela autoridade, este deverá pagar ao LOCADOR o valor da tabela FIPE do veículo, caso a indenização da proteção veicular seja negada e/ou com todos os custos inerentes à recuperação do veículo junto ao depósito, em caso de reboque.<br>
+        <b>4.10</b> O LOCATÁRIO deve manter as características originais do veículo, deste modo, a instalação de adesivos, pinturas especiais, equipamentos e outros, na constatação da falta ou danos e descaracterização do veículo, fica sujeito a multa de R$ 150,00 mais o pagamento do reparo ou substituição de peças ou avarias do veículo.<br>
+        <b>4.11</b> É de responsabilidade do LOCATÁRIO o pagamento e a troca do óleo do motor a cada 1.000 km (mil quilômetros) rodados e filtro, de acordo com as especificações do fabricante do veículo. Será exigido foto do painel do veículo e nota fiscal da compra do óleo, em caso da não realização da troca de óleo no período certo, fica sujeito a multa de R$ 100,00 (cem reais).<br>
+        <b>4.12</b> Aceitar que o LOCADOR promova, pelos meios processuais de que venha a dispor, o seu chamamento aos feitos judiciais promovidos por terceiros decorrentes de eventos com o veículo alugado, cabendo-lhe assumir o polo passivo nas demandas, inclusive quanto aos valores reclamados por terceiros e/ou para assegurar os direitos regressivos do LOCADOR. O LOCATÁRIO será responsável pelo pagamento de lucros cessantes que terceiros possam pleitear judicialmente em razão de conduta irregular do LOCATÁRIO.<br>
+        <br>
+
+        <b>CLÁUSULA 5 – DAS OBRIGAÇÕES DECORRENTES DE COLISÕES E AVARIAS DO VEÍCULO:</b><br>
+        <b>5.1</b> É de responsabilidade do LOCATÁRIO o pagamento do reboque, taxas e reparos ao veículo objeto do presente contrato ou a veículo de outrem, na ocorrência de acidentes e colisões sofridas na vigência do presente contrato, quando não contempladas pela cobertura da proteção veicular contratada para este veículo, independente de dolo, culpa, negligência, imprudência ou imperícia do LOCATÁRIO.<br>
+        <b>5.2</b> Na ocorrência da necessidade do pagamento da cota de participação da proteção veicular, a quantia será integralmente de responsabilidade do LOCATÁRIO, no valor de R$ 900,00 (novecentos reais), 24 (vinte e quatro) horas a contar da comunicação ao LOCADOR. No caso em que o LOCATÁRIO resilir o presente contrato, 24 (vinte e quatro) horas a contar do momento em que teve ciência da resilição, quando realizada pelo LOCADOR.<br>
+        <b>5.3</b> Será de responsabilidade do LOCATÁRIO, o pagamento de taxas e diárias para a liberação do veículo decorrentes ao reboque realizado pelo Poder Público, nos casos supracitados.<br>
+        <b>5.4</b> A responsabilidade determinada nos itens supracitados permanece estabelecida, inclusive, caso o LOCATÁRIO não se encontre no interior do veículo objeto do presente contrato.<br>
+        <br>
+
+        <b>CLÁUSULA 6 – DO PAGAMENTO EM RAZÃO DA LOCAÇÃO DO VEÍCULO:</b><br>
+        <b>6.1</b> O LOCATÁRIO pagará ao LOCADOR o valor citado no início do contrato semanalmente, realizado em toda segunda-feira.<br>
+        <b>6.2</b> Caso o pagamento seja realizado após a data acordada, o valor sofrerá um acréscimo de R$ 30,00 (trinta reais) a título de multa, bem como um acréscimo de R$ 20,00 (vinte reais) por dia de atraso a título de juros.<br>
+        <b>6.3</b> Após 24 (vinte e quatro) horas do não pagamento semanal acordado, o LOCADOR poderá encerrar o contrato e bloquear o veículo, entendendo que o não pagamento confirma o cancelamento do contrato por parte do LOCATÁRIO, e que o LOCADOR poderá usar o valor caução para cobrir os débitos e restante das diárias prevista em contrato da cláusula <b>8.1</b> e <b>8.1.1</b>.<br>
+        <br>
+
+        <b>CLÁUSULA 7 – DA QUANTIA CAUÇÃO:</b><br>
+        <b>7.1</b> Estabelecem como partes, a QUANTIA CAUÇÃO no valor total descrito no início do contrato, a ser integralizada até o ato de retirada do veículo.<br>
+        <b>7.2</b> Ao término da vigência do presente contrato caberá ao LOCADOR restituir a integralidade da QUANTIA CAUÇÃO ao LOCATÁRIO no prazo de 30 (trinta) dias úteis, a contar da devolução do veículo por parte do LOCATÁRIO, conforme as seguintes CONDIÇÕES: A devolução do veículo em perfeito estado, em condição equivalente à observada ao último checklist de vistoria, e após vistoria realizada por vídeo enviado para o WhatsApp do LOCADOR; a inexistência de aluguéis, multas de trânsito ou multas por descumprimento contratual pendente por parte do LOCATÁRIO; após realização da manutenção necessária do veículo, caso haja necessidade; após descontados quaisquer outros subsídios pendentes.<br>
+        <b>7.3</b> Na hipótese de não estarem observadas as condições acima dispostas, o LOCADOR poderá utilizar-se da QUANTIA CAUÇÃO para adimplir subsídios eventuais ou reparar danos causados ao veículo, que não decorram o desgaste natural e a utilização adequada do bem, hipóteses em que só será de direito do LOCATÁRIO a quantidade remanescente a tal utilização da QUANTIA CAUÇÃO.<br>
+        <b>7.4</b> Os gastos com o combustível do veículo deverão ser arcados integralmente pelo LOCATÁRIO, e sempre devolver o veículo com a mesma quantidade de combustível contido no veículo quando a entrega deste foi realizado pelo LOCADOR, sob pena de desconto na QUANTIA CAUÇÃO do valor necessário a atingir tal quantidade de combustível.<br>
+        <b>7.5</b> Qualquer valor que implica a cobrança por passagem, estacionamento ou pedágio do veículo durante a posse do LOCATÁRIO, deverá por este ser arcado. Caso o LOCADOR seja cobrado por qualquer valor desta natureza, o LOCATÁRIO deverá reembolsá-lo imediatamente.<br>
+        <b>7.6</b> Caso o veículo seja devolvido sujo, será cobrada higienização no valor R$ 80,00 (oitenta reais). Na hipótese de lavagem especial será cobrada também 1 (um) dia de locação, ou quanto for permitido, até a disponibilização do veículo, limitadas a 10 (dez) diárias.<br>
+        <b>7.7</b> Quando o documento do veículo não for devolvido, será cobrada uma taxa de R$ 150,00 (cento e cinquenta reais).<br>
+        <br>
+
+        <b>CLÁUSULA 8 – DA VIGÊNCIA E RESCISÃO:</b><br>
+        <b>8.1</b> O presente contrato se inicia na data de sua assinatura com prazo mencionado no início do contrato. A motocicleta mencionada deverá ser devolvida no final do contrato até às 12h00 (doze horas) ao LOCATÁRIO, caso não seja devolvida no dia previsto, o contrato poderá ser renovado automaticamente.<br>
+        <b>8.1.1</b> Em caso de devolução antecipada, o LOCATÁRIO pagará uma multa no valor de 50% (cinquenta por cento) das diárias restantes, não recuperando qualquer ônus ao LOCADOR.<br>
+        <b>8.2</b> É assegurado às partes a resiliência do presente CONTRATO a qualquer tempo, bastando, para tanto, dar ciência a outra parte, cabendo ao LOCATÁRIO a devolução do veículo ao LOCADOR em local designado por este no seguinte prazo: 24 (vinte e quatro) horas a contar da comunicação ao LOCADOR. No caso em que o LOCATÁRIO resista ao presente contrato. 24 (vinte e quatro) horas a contar do momento em que teve ciência da resiliência, quando realizada pelo LOCADOR.<br>
+        <b>8.2.1</b> Caso seja necessário o acionamento de guincho/reboque para buscar o veículo alugado, será cobrada toda a despesa de transporte do locatário.<br>
+        <b>8.3</b> O contrato poderá ser rescindido em pleno direito pelo LOCADOR, independentemente de qualquer notificação, e este, sem mais formalidades, providenciará a retomada do veículo, sem que isso enseje ao LOCATÁRIO qualquer direito de retenção, indenização ou devolução da quantia caução, quando:<br>
+        <b>8.3.1</b> O veículo não pode ser devolvido na data, hora e local previamente ajustados;<br>
+        <b>8.3.2</b> Corrija o uso inadequado do veículo;<br>
+        <b>8.3.3</b> Corrigir apreensão do veículo localizado por autoridades competentes;<br>
+        <b>8.3.4</b> O LOCATÁRIO não quitar seus subsídios nos respectivos vencimentos;<br>
+        <b>8.3.5</b> O LOCATÁRIO acumular uma dívida superior a R$ 50,00 (cinquenta reais), caso no qual o veículo deverá ser entregue no local determinado pelo LOCADOR, imediatamente, sob pena de multa de R$ 150,00 (cento e cinquenta reais) por dia, salvo acordo contrário entre as partes.<br>
+        <b>8.4</b> Fica desde já, pactuada a total inexistência de vínculo trabalhista entre as partes do presente contrato, sendo indevida toda e qualquer incidência das obrigações previdenciárias e dos encargos sociais, não havendo entre as partes, qualquer tipo de subordinação e controle típicos de relações de emprego.<br>
+        <b>8.5</b> Nos termos do artigo 265 do Código Civil Brasileiro, inexiste solidariedade, seja contratual ou legal entre o LOCADOR e o LOCATÁRIO, razão pela qual, com a locação e a efetiva retirada do veículo motorizado, o LOCATÁRIO assume sua posse autônoma para todos os fins de direito, responsabilizando-se por eventuais indenizações decorrentes do uso e circulação do veículo, cuja responsabilidade perdurará até a efetivação da devolução do veículo alternativo.<br>
+        <br>
+
+        <b>CLÁUSULA 9 – DA DEVOLUÇÃO DO VEÍCULO:</b><br>
+        <b>9.1</b> Ao término do contrato, o veículo deverá ser devolvido no local, dia e hora indicados pelo LOCADOR, sob pena de multa de R$ 150,00 (cento e cinquenta reais) por dia.<br>
+        <b>9.2</b> A não devolução de veículo pelo LOCATÁRIO, após notificação realizada pelo LOCADOR, configura crime de APROPRIAÇÃO INDÉBITA conforme artigo 168 do Código Penal Brasileiro, com pena de reclusão de um a quatro anos de prisão e multa.<br>
+        <br>
+
+        <b>CLÁUSULA 10 – DAS DISPOSIÇÕES GERAIS:</b><br>
+        <b>10.1</b> Quaisquer notificações e comunicados enviados sob esse contrato podem ser realizados de forma eletrônica (e-mail ou WhatsApp), escritos ou por correspondência com aviso de recepção aos endereços constantes do preâmbulo. Ficam as partes obrigadas a fornecer tal informação.<br>
+        <b>10.2</b> Todos os valores, despesas e encargos de locação específicos de dívidas líquidas e específicos para pagamento à vista, passíveis de cobrança executiva.<br>
+        <b>10.3</b> Eventuais tolerâncias do LOCADOR para com o LOCATÁRIO no cumprimento das obrigações ajustadas neste contrato específico mera liberalidade, não importando em hipóteses de novação ou renúncia, permanecendo integralmente as cláusulas e condições aqui contratadas.<br>
+        <b>10.4</b> O LOCATÁRIO autoriza o LOCADOR a coletar, usar e divulgar sua imagem para fins de cadastro, defesa e/ou promoção.<br>
+        <b>10.5</b> O LOCATÁRIO concorda que sua assinatura no contrato, implica ciência e adesão por si, seus herdeiros/sucessores a estas cláusulas.<br>
+        <b>10.6</b> Fica eleito o Foro desta cidade e Comarca de Rio de Janeiro RJ, como competente para dirimir quaisquer questões que possam aconselhar da aplicação do presente CONTRATO, por mais privilegiado que seja ou venha a ser, qualquer Foro.<br>
+        <b>10.7</b> E, por serem assim, justas e contratadas, as partes firmam o presente instrumento em 02 (duas) vias de igual teor e forma, para que produza seus efeitos legais, após ter lido o seu conteúdo ter sido claramente entendido e aceito.<br>
     </p>
 
-        
-        
-   <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.5;
-            margin: 20px;
-        }
-        h1, h2 {
-            text-align: left;
-        }
-        .contract-header, .parties, .object, .signatures {
-            margin-bottom: 20px;
-        }
-        .clause {
-            margin-bottom: 15px;
-        }
-        .clause-title {
-            font-weight: bold;
-        }
-        .signature-block {
-            margin-top: 40px;
-            text-align: center;
-        }
-        .signature-line {
-            display: inline-block;
-            width: 300px;
-            border-top: 1px solid #000;
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
 
-    <div class="parties">
-        <p>
-            <strong>LOCADOR:</strong> Klvidal Locação de Veículos, CNPJ: 41.110.090/0001-50, situado na Avenida Presidente Costa e Silva, 1460 Helena Maria, Osasco, e-mail: klvidalocacaodeveiculos@gmail.com.
-        </p>
-        <p>
-            <strong>LOCATÁRIO:</strong> {{$locacao->Cliente->nome}}, com documento de identidade nº {{$locacao->Cliente->rg}}, inscrito no CPF/CNPJ: {{$cpfCnpj}}, Residente: {{$locacao->Cliente->endereco}}, {{$locacao->Cliente->Cidade->nome}} - {{$locacao->Cliente->Estado->nome}}, e-mail: {{$locacao->Cliente->email}}.
-        </p>
-        <p>
-            Vêm, através do presente instrumento, celebrar CONTRATO DE LOCAÇÃO DE VEÍCULO AUTOMOTOR, que será regido pelas cláusulas e condições abaixo dispostas.
-        </p>
-    </div>
+</div><br><br>
 
-    <div class="clause">
-        <h2>CLÁUSULA 1ª – DO OBJETO DO CONTRATO</h2>
-        <p><strong>1.1.</strong> O objeto do presente contrato é a locação do seguinte veículo automotor:</p>
-        <ul>
-            <li><strong>Veículo:</strong> {{$locacao->Veiculo->Marca->nome}} / {{$locacao->Veiculo->modelo}}</li>
-            <li><strong>Cor:</strong> {{$locacao->Veiculo->cor}}</li>
-            <li><strong>Ano modelo:</strong> {{$locacao->Veiculo->ano}}</li>
-            <li><strong>Placa:</strong> {{$locacao->Veiculo->placa}}</li>
-            <li><strong>Renavam nº:</strong> {{$locacao->Veiculo->renavam}}</li>
-        </ul>
-        <p><strong>1.2.</strong> O automóvel será utilizado apenas na cidade de São Paulo, não sendo permitido rodar no interior, litoral e em outro estado.</p>
-        <p><strong>1.3.</strong> O uso do veículo é exclusivo do LOCATÁRIO, não sendo permitido sub-rogar os direitos a terceiros ou permitir que outra pessoa conduza o veículo sem autorização expressa do LOCADOR.</p>
-        <p><strong>1.3.1.</strong> O descumprimento do item 1.3 resultará em rescisão contratual, multa de R$ 1.000,00 e responsabilização total por qualquer dano ao veículo.</p>
-        <p><strong>1.4.</strong> Ocorrendo a utilização do veículo por terceiros com a concordância do LOCATÁRIO, este se responsabilizará por qualquer ação civil ou criminal, isentando o LOCADOR de qualquer responsabilidade.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 2ª – DAS OBRIGAÇÕES DAS PARTES</h2>
-        <p><strong>2.1. OBRIGAÇÕES DO LOCADOR:</strong></p>
-        <p><strong>2.1.1.</strong> Manter o Seguro contratado para o veículo.</p>
-        <p><strong>2.1.2.</strong> Realizar o pagamento do IPVA e do Seguro do veículo.</p>
-        <p><strong>2.1.3.</strong> Assegurar que a documentação do veículo (licenciamento, seguro obrigatório, inspeções) esteja regularizada e válida.</p>
-        <p><strong>2.1.4.</strong> Fornecer suporte em caso de problemas mecânicos não decorrentes de uso inadequado pelo LOCATÁRIO.</p>
-        <p><strong>2.1.5.</strong> O LOCADOR não tem a obrigação de fornecer veículo reserva.</p>
-        
-        <p><strong>2.2. OBRIGAÇÕES DO LOCATÁRIO:</strong></p>
-        <p><strong>2.2.1.</strong> Utilizar o veículo de acordo com a legislação, zelando por sua conservação.</p>
-        <p><strong>2.2.2.</strong> O veículo permanecerá em sua posse integral, de segunda a domingo.</p>
-        <p><strong>2.2.3.</strong> Pagar por quaisquer multas de trânsito ocorridas durante a vigência do contrato.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 3ª – DAS VISTORIAS</h2>
-        <p><strong>3.1. Vistoria Antes da Retirada:</strong></p>
-        <p><strong>3.1.1.</strong> No momento da retirada, será realizada uma vistoria conjunta para registrar as condições gerais do veículo.</p>
-        <p><strong>3.1.2.</strong> A vistoria abrangerá lataria, pneus, sistemas essenciais, limpeza e acessórios.</p>
-        <p><strong>3.1.3.</strong> O LOCATÁRIO deverá informar imediatamente qualquer irregularidade, que constará no Termo de Vistoria assinado pelas partes.</p>
-        <p><strong>3.1.4.</strong> A vistoria será documentada por fotos enviadas ao e-mail do LOCATÁRIO.</p>
-        
-        <p><strong>3.2. Vistoria Mensal:</strong></p>
-        <p><strong>3.2.1.</strong> O veículo será vistoriado mensalmente para verificar seu estado de conservação.</p>
-        <p><strong>3.2.2.</strong> O LOCATÁRIO compromete-se a levar o veículo limpo à oficina credenciada para a vistoria.</p>
-        <p><strong>3.2.3.</strong> Caso sejam identificados pequenos danos, o LOCATÁRIO será responsável por repará-los em até 15 dias.</p>
-        <p><strong>3.2.4.</strong> Se o reparo imediato não for possível, o LOCATÁRIO deverá efetuar um depósito adicional semanal para cobrir as despesas.</p>
-        
-        <p><strong>3.3. Vistoria na Devolução:</strong></p>
-        <p><strong>3.3.1.</strong> O veículo será novamente vistoriado na devolução para comparar com o relatório inicial.</p>
-        <p><strong>3.3.2.</strong> O LOCATÁRIO compromete-se a devolver o veículo nas mesmas condições em que o recebeu e limpo para a avaliação.</p>
-        <p><strong>3.3.3.</strong> Caso sejam constatados danos, o LOCATÁRIO será responsabilizado pelos custos de reparo.</p>
-        
-        <p><strong>3.4.</strong> O LOCATÁRIO declara estar ciente das vistorias e assume total responsabilidade pela conservação do veículo.</p>
-        <p><strong>3.5.</strong> O não comparecimento à vistoria agendada sujeita o LOCATÁRIO ao encerramento do contrato.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 4ª – DA MANUTENÇÃO</h2>
-        <p><strong>4.1. Manutenção Preventiva (Responsabilidade do LOCADOR):</strong></p>
-        <p><strong>4.1.1.</strong> A manutenção preventiva será realizada exclusivamente pela oficina credenciada Didi Mecânica. Qualquer outro reparo deve ser autorizado expressamente por Waldir Mendes.</p>
-        <p><strong>4.1.2.</strong> Itens cobertos pelo LOCADOR:</p>
-        <ul>
-            <li>Troca de Pneus (por desgaste natural).</li>
-            <li>Vela e cabo de vela (a cada 5 meses).</li>
-            <li>Bobina (quando apresentar falhas).</li>
-            <li>Correia dentada/comando (a cada 30.000 KM).</li>
-            <li>Pastilhas (entre 15.000 e 20.000 KM).</li>
-            <li>Alinhamento e balanceamento.</li>
-        </ul>
-        <p><strong>4.1.3.</strong> Se alguma manutenção do item 4.1.2 for necessária antes do prazo, sem ser por mau uso, será custeada pelo LOCADOR.</p>
-
-        <p><strong>4.2. Manutenção Preventiva (Responsabilidade do LOCATÁRIO):</strong></p>
-        <p><strong>4.2.1.</strong> O LOCATÁRIO é exclusivamente responsável pela troca de óleo e filtro do motor a cada 10.000 km.</p>
-        <p><strong>4.2.2.</strong> O não cumprimento da obrigação do item 4.2.1 responsabilizará o LOCATÁRIO por todos os danos e custos decorrentes.</p>
-        <p><strong>4.2.3.</strong> O LOCATÁRIO é responsável pela manutenção de itens de desgaste por uso regular, como lâmpadas, palhetas, estofados, e outros acessórios.</p>
-        <p><strong>4.2.4.</strong> Peças danificadas por má utilização do veículo são de responsabilidade do LOCATÁRIO.</p>
-        <p><strong>4.2.5.</strong> Gastos decorrentes do uso de combustível adulterado serão arcados pelo LOCATÁRIO.</p>
-        
-        <p><strong>4.3. Monitoramento pelo LOCATÁRIO:</strong></p>
-        <p><strong>4.3.1.</strong> O LOCATÁRIO deve monitorar e repor os níveis de água e óleo, assumindo os custos de reparo por danos decorrentes da falta desses fluidos.</p>
-        <p><strong>4.3.2.</strong> Deverá enviar fotos dos níveis de água e óleo todo domingo via WhatsApp ao LOCADOR.</p>
-        <p><strong>4.3.3.</strong> É responsabilidade do LOCATÁRIO monitorar o painel e indicadores de anomalias. Caso identifique um problema e continue a dirigir, assume integralmente os riscos. Em caso de anomalia, deve parar o veículo e contatar o LOCADOR imediatamente.</p>
-
-        <p><strong>4.4. Prazos e Procedimentos de Manutenção:</strong></p>
-        <p><strong>4.4.1.</strong> O LOCADOR realizará as manutenções em no máximo 6 horas, sem prejuízo na diária.</p>
-        <p><strong>4.4.2.</strong> Se a manutenção ultrapassar 6 horas, o LOCADOR poderá abonar a diária ou rescindir o contrato com devolução da caução.</p>
-        <p><strong>4.4.3.</strong> Em caso de quebra ou defeito, o LOCATÁRIO deve informar o LOCADOR em até 24 horas e apresentar o veículo para reparos.</p>
-        <p><strong>4.4.4.</strong> É vedado ao LOCATÁRIO efetuar qualquer reparo sem a prévia anuência do LOCADOR, sob pena de não ser reembolsado.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 5ª – DAS MULTAS E INFRAÇÕES</h2>
-        <p><strong>5.1.</strong> O pagamento das multas deve ser feito pelo LOCATÁRIO imediatamente após a constatação no sistema do DETRAN.</p>
-        <p><strong>5.2.</strong> O LOCADOR indicará o LOCATÁRIO como condutor infrator, que terá legitimidade para se defender perante o órgão autuador.</p>
-        <p><strong>5.3.</strong> Questionamentos sobre a procedência das multas devem ser feitos pelo LOCATÁRIO diretamente ao órgão autuador.</p>
-        <p><strong>5.4.</strong> Se o recurso for vitorioso, o LOCADOR fornecerá a guia de pagamento para que o LOCATÁRIO solicite o reembolso.</p>
-        <p><strong>5.5.</strong> O LOCATÁRIO deverá comparecer para assinar a transferência de pontos. A perda do prazo para transferência acarretará multa de R$ 400,00.</p>
-        <p><strong>5.6.</strong> Na retirada do veículo, é obrigatório o aceite na carteira digital de trânsito indicando o LOCATÁRIO como principal condutor.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 6ª – DA UTILIZAÇÃO DO VEÍCULO</h2>
-        <p><strong>6.1.</strong> O veículo deve ser utilizado exclusivamente para fins profissionais  e de acordo com as normas de trânsito.</p>
-        <p><strong>6.2.</strong> A CNH do locatário deverá conter a anotação "Exerce Atividade Remunerada" (EAR).</p>
-        <p><strong>6.3.</strong> A utilização inadequada pode levar à rescisão do contrato e recolhimento do veículo.</p>
-        <p><strong>6.4.</strong> Qualquer modificação no veículo só pode ser feita com autorização expressa do LOCADOR.</p>
-        <p><strong>6.5.</strong> O LOCATÁRIO é responsável por quaisquer danos materiais ou pessoais decorrentes da má utilização do veículo.</p>
-        <p><strong>6.6.</strong> Em caso de reboque por estacionamento irregular, o LOCATÁRIO arcará com todos os custos de recuperação e uma multa de R$ 70,00 por dia em que o carro estiver no depósito.</p>
-        <p><strong>6.7.</strong> O LOCATÁRIO compromete-se a guardar o veículo em garagem ou estacionamento quando não estiver em uso.</p>
-        <p><strong>6.8.</strong> É vedado sair do Estado de São Paulo sem autorização por escrito do LOCADOR, sob pena de multa de R$ 300,00.</p>
-        <p><strong>6.9.</strong> O LOCATÁRIO se responsabiliza por todos os acessórios do veículo (chave, documento, step, etc.) e arcará com os custos de reposição em caso de perda ou dano.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 7ª – DOS SINISTROS (ACIDENTES, ROUBO E FURTO)</h2>
-        <p><strong>7.1.</strong> Em caso de qualquer evento (acidente, etc.), o LOCATÁRIO é responsável por preservar o veículo e se compromete a:</p>
-        <ul>
-            <li><strong>7.1.1.</strong> Informar imediatamente o LOCADOR sobre o ocorrido com todos os detalhes.</li>
-            <li><strong>7.1.2.</strong> Registrar Boletim de Ocorrência, quando aplicável, e enviar cópia ao LOCADOR em até 24 horas.</li>
-            <li><strong>7.1.3.</strong> Acionar a autoridade policial, se necessário.</li>
-            <li><strong>7.1.4.</strong> Cooperar com o LOCADOR e/ou seguradora na apuração dos fatos.</li>
-            <li><strong>7.1.5.</strong> Não realizar reparos sem autorização prévia e por escrito do LOCADOR.</li>
-            <li><strong>7.1.6.</strong> Pagar taxas de liberação do veículo em caso de reboque pelo Poder Público.</li>
-        </ul>
-        <p><strong>7.2.</strong> O pagamento semanal não será abonado em caso de qualquer evento com o veículo.</p>
-        <p><strong>7.3.</strong> Após um evento, o LOCATÁRIO poderá optar por acionar o seguro ou realizar o conserto particular, informando sua decisão em até 48 horas e arcando com todos os custos. O conserto deve ser feito em até 15 dias.</p>
-        <p><strong>7.4.</strong> Em caso de <strong>roubo ou furto</strong>:</p>
-        <p><strong>7.4.1.</strong> Se o veículo <strong>NÃO FOR LOCALIZADO</strong> em 45 dias, o LOCATÁRIO pagará R$ 1.000,00 referente a despesas de rastreador e documentação.</p>
-        <p><strong>7.4.2.</strong> Se o veículo <strong>FOR LOCALIZADO</strong> com avarias ou sem peças, o LOCATÁRIO é responsável por pagar todas as despesas não cobertas pelo seguro.</p>
-        <p><strong>7.5.</strong> A responsabilidade do LOCATÁRIO permanece mesmo que ele não esteja no interior do veículo no momento do ocorrido.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 8ª – DO SEGURO E SUAS COBERTURAS</h2>
-        <p><strong>8.1.</strong> O LOCADOR disponibiliza um seguro para o veículo. O LOCATÁRIO é responsável por quaisquer danos não cobertos pela apólice.</p>
-        <p><strong>8.2. Coberturas Inclusas:</strong></p>
-        <ul>
-            <li>Colisão.</li>
-            <li>Roubo e furto qualificado.</li>
-            <li>Perda total.</li>
-            <li>Fenômenos da natureza (exceto chuva de granizo e água do mar).</li>
-            <li>Danos a terceiros até R$ 50.000,00.</li>
-            <li>Reboque até 200km.</li>
-        </ul>
-        <p><strong>8.3. Principais Exclusões (Sem Cobertura):</strong></p>
-        <ul>
-            <li>Danos por chuva de granizo ou água do mar.</li>
-            <li>Danos por alagamentos onde o condutor assumiu o risco.</li>
-            <li>Condutor sob efeito de álcool ou drogas.</li>
-            <li>Danos por participação em competições ou rachas.</li>
-            <li>Danos causados por motorista não autorizado.</li>
-            <li>Danos internos e externos que não sejam de colisão.</li>
-        </ul>
-         <p><strong>8.3.1.</strong> A lista de exclusões não é exaustiva. O LOCATÁRIO pode solicitar uma cópia das condições gerais da apólice.</p>
-        <p><strong>8.4. Franquia:</strong></p>
-        <p><strong>8.4.1.</strong> Em caso de sinistro, a franquia do seguro é de <strong>6% do valor de mercado do veículo</strong> (Tabela Fipe), e seu pagamento é de responsabilidade integral do LOCATÁRIO.</p>
-        <p><strong>8.5.</strong> É vedado ao LOCATÁRIO acionar o seguro sem permissão expressa do LOCADOR, sob pena de multa de R$ 200,00.</p>
-        <p><strong>8.6.</strong> Se o sinistro ocorrer com o LOCATÁRIO sob efeito de álcool/drogas, ou se ele se recusar a fazer o teste do bafômetro, e o seguro negar a indenização, ele deverá arcar com o valor total do veículo (Tabela FIPE).</p>
-        <p><strong>8.7.</strong> O LOCADOR pode alterar a empresa de seguros a qualquer tempo, sem aviso prévio, o que não altera as responsabilidades do LOCATÁRIO.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 9ª – DO PAGAMENTO E REAJUSTE</h2>
-        <p><strong>9.1. Pagamento Semanal:</strong></p>
-        <p><strong>9.1.1.</strong> O LOCATÁRIO pagará ao LOCADOR o valor de <strong>R$ 600,00 (Seiscentos reais)</strong> toda 
-        <b>{{ \Carbon\Carbon::parse($locacao->data_saida)->isoFormat('dddd') }}</b>, via PIX CNPJ: 41.110.090/0001-50 Banco Itaú Empresas em nome de Klvidal Locação de Veículos LTDA</p>
-        <p><strong>9.1.2.</strong> Em caso de atraso, será cobrado um adicional de R$ 30,00 por dia, ou o LOCADOR poderá solicitar a devolução do veículo.</p>
-        <p><strong>9.1.3.</strong> O comprovante de pagamento deve ser enviado até as 00:00 do dia do vencimento.</p>
-        <p><strong>9.1.4.</strong> Um atraso superior a 15 dias pode resultar na rescisão do contrato, inscrição no SPC/Serasa e medidas judiciais como Busca e Apreensão, com o LOCATÁRIO arcando com todas as despesas.</p>
-        <p><strong>9.1.5.</strong> O veículo poderá ser bloqueado a qualquer momento se algo estiver em desacordo com o contrato.</p>
-
-        <p><strong>9.2. Reajuste do Aluguel:</strong></p>
-        <p><strong>9.2.1.</strong> Poderá haver um reajuste semestral de 5% no valor do aluguel, podendo o LOCATÁRIO aceitar ou devolver o veículo.</p>
-        <p><strong>9.2.2.</strong> Haverá também um reajuste anual com base na variação do IPCA.</p>
-        <p><strong>9.2.3.</strong> O LOCADOR pode aplicar uma revisão extraordinária dos valores caso haja alteração significativa nos custos operacionais, mediante aviso prévio de 30 dias.</p>
-        <p><strong>9.2.4.</strong> O LOCATÁRIO será informado dos novos valores por meio eletrônico e, caso não concorde, o contrato poderá ser rescindido.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 10ª – DA CAUÇÃO</h2>
-        <p><strong>10.1.</strong> Fica estabelecida a quantia caução no valor de <strong>R$ {{ number_format($locacao->valor_caucao, 2, ',', '.') }}</strong>.</p>
-        <p><strong>10.2.</strong> A caução será restituída integralmente em até 30 dias corridos após a devolução do veículo, desde que:</p>
-        <ul>
-            <li>O veículo seja devolvido em perfeito estado, conforme a vistoria inicial.</li>
-            <li>Não existam débitos de aluguéis, multas de trânsito ou contratuais.</li>
-            <li>O veículo seja devolvido limpo (interno e externo).</li>
-            <li>Outros débitos pendentes sejam descontados.</li>
-        </ul>
-        <p><strong>10.3.</strong> Caso as condições acima não sejam atendidas, o LOCADOR poderá usar a caução para cobrir os débitos ou reparar danos.</p>
-        <p><strong>10.4.</strong> O veículo deve ser devolvido com a mesma quantidade de combustível da entrega, sob pena de desconto do valor na caução.</p>
-        <p><strong>10.5.</strong> Se o carro for devolvido sujo, será cobrada a lavagem.</p>
-        <p><strong>10.6.</strong> Se os documentos do carro ou GNV não forem devolvidos, serão cobradas as despesas para a 2ª via e uma indenização pela indisponibilidade do carro.</p>
-    </div>
-    
-    <div class="clause">
-        <h2>CLÁUSULA 11ª – DA EXCLUSIVIDADE E INEXISTÊNCIA DE VÍNCULO TRABALHISTA</h2>
-        <p><strong>11.1.</strong> A locação é pessoal e intransferível, sendo vedado ceder, transferir ou sublocar o veículo. A infração pode levar à rescisão imediata do contrato.</p>
-        <p><strong>11.2.</strong> As partes concordam que não existe qualquer vínculo trabalhista entre LOCADOR e LOCATÁRIO.</p>
-        <p><strong>11.3.</strong> O contrato não gera obrigações previdenciárias ou trabalhistas, não havendo subordinação, pessoalidade ou habitualidade.</p>
-        <p><strong>11.4.</strong> O LOCATÁRIO assume total responsabilidade por contratos de trabalho com terceiros e se compromete a indenizar o LOCADOR por quaisquer reclamações trabalhistas.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 12ª – DA VIGÊNCIA E RESCISÃO</h2>
-        <p><strong>12.1. Vigência:</strong></p>
-        <p><strong>12.1.1.</strong> O contrato tem vigência a partir de <b>{{\Carbon\Carbon::parse($locacao->data_saida)->format('d/m/Y')}}</b>, com prazo mínimo de 90 dias, renovando-se automaticamente após este período.</p>
-        <p><strong>12.1.2.</strong> Após 90 dias, qualquer uma das partes pode rescindir o contrato a qualquer tempo, mediante comunicação à outra parte.</p>
-
-        <p><strong>12.2. Rescisão Antecipada:</strong></p>
-        <p><strong>12.2.1.</strong> Se o LOCATÁRIO devolver o veículo antes de 90 dias, pagará multa de R$ 1.200,00.</p>
-        <p><strong>12.2.2.</strong> O LOCADOR não poderá solicitar o veículo antes de 90 dias, salvo por irregularidade do LOCATÁRIO, sob pena de multa.</p>
-
-        <p><strong>12.3. Rescisão Automática pelo LOCADOR:</strong></p>
-        <p><strong>12.3.1.</strong> O contrato será rescindido automaticamente, com a retomada do carro, sem direito a indenização para o LOCATÁRIO, nos seguintes casos:</p>
-        <ul>
-            <li>Não devolução do carro na data e local ajustados.</li>
-            <li>Acidente ou dano causado por dolo ou culpa do LOCATÁRIO.</li>
-            <li>Uso inadequado do carro.</li>
-            <li>Apreensão do carro por autoridades.</li>
-            <li>Não quitação de débitos nos vencimentos.</li>
-        </ul>
-        <p><strong>12.3.2.</strong> Qualquer pendência financeira não quitada no prazo estabelecido resultará na rescisão automática e na obrigação de entrega imediata do veículo, sob pena de multa diária de R$ 150,00.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 13ª – DA VALIDAÇÃO DO CONTRATO</h2>
-        <p><strong>13.1.</strong> O contrato será válido após o cumprimento das seguintes condições:</p>
-        <p><strong>13.1.1. Assinatura Digital:</strong> O LOCATÁRIO deverá assinar digitalmente o contrato por meio da plataforma indicada pelo LOCADOR. Esta assinatura tem a mesma validade jurídica da manuscrita.</p>
-        <p><strong>13.1.2. Assinatura Manual:</strong> O LOCATÁRIO deverá assinar manualmente o Termo de Vistoria de Retirada do Veículo.</p>
-        <p><strong>13.2.</strong> A locação só será efetivada após a assinatura digital do contrato e a assinatura manual do Termo de Vistoria.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 14ª – DA DEVOLUÇÃO DO VEÍCULO</h2>
-        <p><strong>14.1.</strong> Após o término do contrato, o veículo deve ser devolvido no local indicado pelo LOCADOR, sob pena de multa de R$ 200,00 por dia de atraso.</p>
-        <p><strong>14.2.</strong> A não devolução do veículo após notificação por escrito configura crime de <strong>APROPRIAÇÃO INDÉBITA</strong> (Art. 168 do Código Penal), sujeito a pena de reclusão e multa.</p>
-    </div>
-
-    <div class="clause">
-        <h2>CLÁUSULA 15ª - DAS NOTIFICAÇÕES</h2>
-        <p><strong>15.1.</strong> Quaisquer notificações e comunicações devem ser registradas por e-mail, correspondência ou WhatsApp.</p>
-        <p><strong>15.2.</strong> As partes se obrigam a informar qualquer alteração de endereço ou contato.</p>
-    </div>
-
-    <p>E, por estarem assim, justas e contratadas, as PARTES firmam o presente instrumento em 02 (duas) vias de igual teor e forma, para que produza seus efeitos legais, e após ter lido e seu conteúdo ter sido claramente entendido e aceito.</p>
-<br><br>
-    <div style="text-align: center; font-size: 12">Osasco, {{ $dataAtual->isoFormat('DD MMMM YYYY') }}<br><br><br><br>
+        <div style="text-align: center; font-size: 12">Rio de Janeiro, {{ $dataAtual->isoFormat('DD MMMM YYYY') }}<br><br><br><br>
 
             ___________________________________________________________<br>
-            LOCATÁRIO: {{$locacao->Cliente->nome}}<br>
-            <b>CPF:</b> {{$cpfCnpj}}<br><br><br>
+            LOCATÁRIO: {{$locacao->Cliente->nome}}<br><Br><br><br>
 
             ___________________________________________________________<br>
-            LOCADOR: Klvidal Locação de Veículos <br>
-            <b>CNPJ:</b> 41.110.090/0001-50<br><br><br>
+            LOCADOR: Shineray Guaratiba.
 
             @if(!empty($locacao->testemunha_1))
                         ___________________________________________________________<br>            
@@ -561,7 +347,20 @@
                     TESTEMUNHA: {{$locacao->testemunha_2}} <br>
                     <b>RG: {{$locacao->testemunha_2_rg}}</b> <br><br><br>
             @endif
+
+
+
         </div>
-</body>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
