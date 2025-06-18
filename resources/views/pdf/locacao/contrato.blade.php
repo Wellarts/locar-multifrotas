@@ -326,15 +326,15 @@
     </p>
 
 
-</div><br><br>
+</div><br>
 
-        <div style="text-align: center; font-size: 12">Rio de Janeiro, {{ $dataAtual->isoFormat('DD MMMM YYYY') }}<br><br><br><br>
+        <div style="text-align: center; font-size: 12">Rio de Janeiro, {{ $dataAtual->isoFormat('DD MMMM YYYY') }}<br><br>
 
             ___________________________________________________________<br>
             LOCATÁRIO: {{$locacao->Cliente->nome}}<br><Br><br><br>
 
             ___________________________________________________________<br>
-            LOCADOR: Shineray Guaratiba.
+            LOCADOR: Shineray Guaratiba.<br><Br><br><br>
 
             @if(!empty($locacao->testemunha_1))
                         ___________________________________________________________<br>            
