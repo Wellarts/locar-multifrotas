@@ -12,6 +12,7 @@ use App\Models\Locacao;
 use App\Models\Veiculo;
 use Carbon\Carbon;
 use DateTime;
+use FFI;
 use Filament\Tables\Actions\ExportAction;
 use Filament\Actions\Exports\Enums\ExportFormat;
 use Filament\Forms;
@@ -517,9 +518,9 @@ class LocacaoResource extends Resource
 
                             ]),
 
-                        Forms\Components\Tabs\Tab::make('Assinaturas')
+                        Forms\Components\Tabs\Tab::make('Assinaturas de Terceiros')
                             ->schema([
-                                Fieldset::make('Assinaturas do Contrato')
+                                Fieldset::make('Assinaturas no Contrato')
                                     ->schema([
                                         Forms\Components\TextInput::make('testemunha_1')
                                             ->label('Testemunha 1')
@@ -531,12 +532,16 @@ class LocacaoResource extends Resource
                                             ->required(false),
                                         Forms\Components\TextInput::make('testemunha_2_rg')
                                             ->label('RG'),
+                                        Forms\Components\TextInput::make('fiador')
+                                            ->label('Fiador')
+                                            ->required(false),
+                                            
                                     ]),
 
                                 Fieldset::make('Dados Completo do Fiador')
                                     ->schema([
-                                        Forms\Components\Textarea::make('fiador')
-                                            ->label('Fiador')
+                                        Forms\Components\Textarea::make('dados_fiador')
+                                            ->label('')
                                             ->autosize()
                                             ->columnSpanFull(),
 
