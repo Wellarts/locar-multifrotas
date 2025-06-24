@@ -315,14 +315,35 @@
         <b>9.2</b> A não devolução de veículo pelo LOCATÁRIO, após notificação realizada pelo LOCADOR, configura crime de APROPRIAÇÃO INDÉBITA conforme artigo 168 do Código Penal Brasileiro, com pena de reclusão de um a quatro anos de prisão e multa.<br>
         <br>
 
-        <b>CLÁUSULA 10 – DAS DISPOSIÇÕES GERAIS:</b><br>
-        <b>10.1</b> Quaisquer notificações e comunicados enviados sob esse contrato podem ser realizados de forma eletrônica (e-mail ou WhatsApp), escritos ou por correspondência com aviso de recepção aos endereços constantes do preâmbulo. Ficam as partes obrigadas a fornecer tal informação.<br>
-        <b>10.2</b> Todos os valores, despesas e encargos de locação específicos de dívidas líquidas e específicos para pagamento à vista, passíveis de cobrança executiva.<br>
-        <b>10.3</b> Eventuais tolerâncias do LOCADOR para com o LOCATÁRIO no cumprimento das obrigações ajustadas neste contrato específico mera liberalidade, não importando em hipóteses de novação ou renúncia, permanecendo integralmente as cláusulas e condições aqui contratadas.<br>
-        <b>10.4</b> O LOCATÁRIO autoriza o LOCADOR a coletar, usar e divulgar sua imagem para fins de cadastro, defesa e/ou promoção.<br>
-        <b>10.5</b> O LOCATÁRIO concorda que sua assinatura no contrato, implica ciência e adesão por si, seus herdeiros/sucessores a estas cláusulas.<br>
-        <b>10.6</b> Fica eleito o Foro desta cidade e Comarca de Rio de Janeiro RJ, como competente para dirimir quaisquer questões que possam aconselhar da aplicação do presente CONTRATO, por mais privilegiado que seja ou venha a ser, qualquer Foro.<br>
-        <b>10.7</b> E, por serem assim, justas e contratadas, as partes firmam o presente instrumento em 02 (duas) vias de igual teor e forma, para que produza seus efeitos legais, após ter lido o seu conteúdo ter sido claramente entendido e aceito.<br>
+        <b>CLÁUSULA 10 – DO FIADOR:</b><br>
+        <div class="retangulo">
+            <span class="texto">DADOS DO FIADOR</span>
+        </div>
+        <div style="border: 1px solid #a0a0a0; padding: 12px; margin-bottom: 16px;">
+            <span class="tx">
+            {{ $locacao->dados_fiador }}
+            </span>
+        </div>
+        <b>10.1</b> O FIADOR declara, sob as penas da lei, que possui plena capacidade financeira para cumprir as obrigações aqui assumidas, isentando o LOCADOR de qualquer responsabilidade por eventuais prejuízos decorrentes de sua insolvência posterior.<br>
+        <b>10.2</b> O FIADOR, devidamente atualizado neste instrumento, compromete-se a responder solidariamente com o LOCATÁRIO por todas as obrigações assumidas no presente contrato de contratação, nos termos do art. 827 do Código Civil Brasileiro.<br>
+        Desta forma, o FIADOR obriga-se a pagar ao LOCADOR quaisquer subsídios decorrentes deste contrato, incluindo, mas não se limitando a:<br>
+        &nbsp;&nbsp;&bull; Pagamento de aluguéis vencidos e vencedores;<br>
+        &nbsp;&nbsp;&bull; Multas contratuais e indenizações por descumprimento de cláusulas;<br>
+        &nbsp;&nbsp;&bull; Danos causados à motocicleta durante o período de locação;<br>
+        &nbsp;&nbsp;&bull; Despesas relacionadas a multas de trânsito, IPVA, seguro obrigatório (DPVAT) e outros encargos legais atribuídas ao veículo;<br>
+        &nbsp;&nbsp;&bull; O LOCATÁRIO e FIADOR podem ter seus nomes protestados em cartório em caso de inadimplência.<br>
+        <b>10.3</b> Nos termos do art. 836 do Código Civil, caso o FIADOR efetue o pagamento de quaisquer obrigações inadimplentes pelo LOCATÁRIO, este adquirirá o direito de regresso contra o LOCATÁRIO, podendo exigir o reembolso integral dos valores despendidos, acrescidos de eventuais correções monetárias e juros legais.<br>
+        <b>10.4</b> O FIADOR renuncia expressamente a quaisquer defesas pessoais que possam obstaculizar o exercício dos direitos do LOCADOR, comprometendo-se a honrar as obrigações assumidas neste contrato tão logo sejam obrigatórias, independentemente da execução prévia contra o LOCATÁRIO.<br>    
+        <br>
+        
+        <b>CLÁUSULA 11 – DAS DISPOSIÇÕES GERAIS:</b><br>
+        <b>11.1</b> Quaisquer notificações e comunicados enviados sob esse contrato podem ser realizados de forma eletrônica (e-mail ou WhatsApp), escritos ou por correspondência com aviso de recepção aos endereços constantes do preâmbulo. Ficam as partes obrigadas a fornecer tal informação.<br>
+        <b>11.2</b> Todos os valores, despesas e encargos de locação específicos de dívidas líquidas e específicos para pagamento à vista, passíveis de cobrança executiva.<br>
+        <b>11.3</b> Eventuais tolerâncias do LOCADOR para com o LOCATÁRIO no cumprimento das obrigações ajustadas neste contrato específico mera liberalidade, não importando em hipóteses de novação ou renúncia, permanecendo integralmente as cláusulas e condições aqui contratadas.<br>
+        <b>11.4</b> O LOCATÁRIO autoriza o LOCADOR a coletar, usar e divulgar sua imagem para fins de cadastro, defesa e/ou promoção.<br>
+        <b>11.5</b> O LOCATÁRIO concorda que sua assinatura no contrato, implica ciência e adesão por si, seus herdeiros/sucessores a estas cláusulas.<br>
+        <b>11.6</b> Fica eleito o Foro desta cidade e Comarca de Rio de Janeiro RJ, como competente para dirimir quaisquer questões que possam aconselhar da aplicação do presente CONTRATO, por mais privilegiado que seja ou venha a ser, qualquer Foro.<br>
+        <b>11.7</b> E, por serem assim, justas e contratadas, as partes firmam o presente instrumento em 02 (duas) vias de igual teor e forma, para que produza seus efeitos legais, após ter lido o seu conteúdo ter sido claramente entendido e aceito.<br>
     </p>
 
 
@@ -334,7 +355,7 @@
             LOCATÁRIO: {{$locacao->Cliente->nome}}<br><Br><br><br>
 
             ___________________________________________________________<br>
-            LOCADOR: Shineray Guaratiba.<br><Br><br><br>
+            LOCADOR: Shineray Guardatiba | LOCAÇÕES<br><Br><br><br>
 
             @if(!empty($locacao->testemunha_1))
                         ___________________________________________________________<br>            
@@ -347,6 +368,12 @@
                     TESTEMUNHA: {{$locacao->testemunha_2}} <br>
                     <b>RG: {{$locacao->testemunha_2_rg}}</b> <br><br><br>
             @endif
+
+            @if(!empty($locacao->fiador))
+                    __________________________________________________________<br>            
+                    FIADOR: {{$locacao->fiador}} <br>
+            @endif
+                    
 
 
 
